@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header{
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 5, 5, 0.186);
+}
+
+
+
+.title{
+    margin-left: 4rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.title h4{
+    font-size: 30px;
+    font-family: "Poppins",sans-serif;
+}
+
+
+.profile{
+    width: 12rem;
+    margin-right: 2rem;
+    position: relative;
+    display: flex;
+    gap:1rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+.profile .img{
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+
+}
+.profile .img::before{
+    position: absolute;
+    content: "";
+    border: 1px solid rgba(255, 0, 0, 0.184);
+    border-radius: 50%;
+    transform: scale(1.5);
+    top: -1px;
+    left: -1px;
+    width: 100%;
+    height: 100%;
+}
+.profile .img i{
+    font-size: 30px;
+}
+
+.profile .slide i{
+    font-family: "Poppins",sans-serif;
+    font-weight: 800 !important;
+}
+
+
+.down{
+    position: absolute;
+    top: 6rem;
+    left: 0;
+opacity: 0;
+visibility: hidden;
+    pointer-events: none;
+    background-color: rgb(187, 24, 24);
+    width: 100%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10000;
+    transition: .3s;
+}
+
+.name{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.name h3{
+    font-family: "Poppin",sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: whitesmoke;
+}
+
+.name h6{
+    font-family: "Poppins",sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: whitesmoke;
+    opacity: .8;
+}
+
+.down ul{
+    width: 80%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+}
+
+.down ul li{
+    width: 100%;
+    padding: 5px ;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    position: relative;
+}
+
+.down ul li::before{
+    position: absolute;
+    content: "";
+    width: .2rem;
+    height: 100%;
+    top: 0;
+    opacity: .7;
+    opacity: 0;
+    transition: .3s;
+    left: -4px;
+    background-color: whitesmoke;
+}
+
+.down ul li a{
+    font-family: "Poppins",sans-serif;
+    color: rgb(255, 183, 183);
+    text-decoration: none;
+    transition: .3s;
+}
+
+.down ul li:hover a{
+    color: whitesmoke;
+    opacity: .9;
+    margin-left: 1rem;
+    transition: .3s;
+}
+
+.down ul li:hover::before{
+    opacity: 1;
+    left: 1px;
+    transition: .3s;
+}
+.line{
+    width: 90%;
+    height: 1px;
+    background-color: whitesmoke;
+    opacity: .4;
+    margin-bottom: 1rem;
+}
+
+
+.down.active{
+    top: 5.5rem;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transition: .3s;
+}
+
+.profile.active{
+    height: 100%;
+    background-color: rgb(251, 140, 140);
+}
+
+
+.profile.active  .img::before{
+    border: 1px solid whitesmoke;
+}
+
+.profile.active  .slide i{
+    color: whitesmoke;
+}
+
+
+.headertwo{
+    width: 100%;
+    height: 5rem;
+    background-color: rgba(255, 5, 5, 0.052);
+    position: relative;
+}
+
+.headertwo ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.headertwo ul li{
+    padding: 15px 20px;
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.headertwo ul li a{
+    font-family: "Poppins",sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.headertwo ul li::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 100%;
+    height: 0;
+    background-color: rgb(255, 33, 33);
+    opacity: .9;
+    transition: .1s;
+}
+
+.headertwo ul li:hover::before{
+    height: 2px;
+    transition: .2s;
+}
+.largo{
+    display: none;
+}
+.shto{
+    display: none;
+}
+
+
+@media screen and (max-width: 665px){
+    .title{
+        margin-left: 2rem;
+    }
+    .profile{
+        margin-right: 0;
+    }
+    .headertwo{
+        position: fixed;
+        top:0;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        left: 0;
+        height: 100%;
+        z-index: 1000000;
+        transition: .3s;
+        background-color: rgb(189, 63, 63);
+    }
+    .shto{
+        display: block;
+    }
+
+    .headertwo.active{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+        transition: .3s;
+    }
+    .headertwo ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 10rem;
+        margin: 0 auto;
+
+    }
+   
+
+
+    .headertwo ul li a{
+        color: whitesmoke;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+
+    .largo{
+        display: block;
+        position: absolute;
+        top: 2rem;
+        right: 2rem;
+    }
+    .largo i{
+        font-size: 35px;
+        font-weight: 700;
+        color: whitesmoke;
+        z-index: 100000000;
+    }
+}
+
+
+
+@media screen and (max-width: 400px){
+    .title{
+        margin-left: 4px;
+    }
+    .profile{
+        width:11rem;
+    }
+}
+
+
+.red {
+    z-index: 100;
+    background-color: rgb(219, 145, 145) !important;
+}
+
+
+
+
+
+/* ====================================== */
+
+
+.studentet{
+    width: 90%;
+    height: 10rem;
+    background: rgb(255,239,239);
+    background: linear-gradient(90deg, rgba(255,239,239,1) 0%, rgba(255,232,232,1) 37%, rgba(236,131,131,1) 100%);
+    margin: 0 auto;
+    margin-top: 7rem;
+    display: flex;
+    cursor: pointer;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+
+.gjithsej{
+    margin-right: 3rem;
+}
+
+.gjithsej h5{
+    font-family: "Poppins",sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 1rem;
+
+}
+
+.gjithsej h1{
+    font-size: 50px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.gjithsej h6{
+    font-family: "Poppins",sans-serif;
+    font-weight: 300;
+    font-size: 17px;
+}
+
+
+
+.main{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.mTitle{
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.mTitle h3{
+    font-family: "Poppins",sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+
+}
+
+.tabela{
+    width: 100%;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+.tabela th{
+    height: 5rem;
+    border-bottom: 1px solid red;
+    padding-left: 1rem;
+    font-size: 17px;
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+    margin: 0;
+}
+.tabela th:nth-child(2){
+    border-left: 1px solid red;
+}
+
+.rowi {
+    height: 5rem;
+    cursor: pointer;
+    background-color: rgb(205, 205, 205);
+}
+
+
+.rowi td{
+    padding-left: 1rem;
+}
+
+.rowi td .info h3{
+    font-family: "Poppins",sans-serif;
+    font-size: 19px;
+    margin-bottom: .1rem;
+}
+
+.rowi td .info h4{
+    font-family: "Poppins",sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.fakulteti{
+    text-transform: uppercase;
+}
+
+
+.rowi td .username h3{
+    font-family: "Poppins",sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+
+.rowi td .ndrysho{
+    text-align: center;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.rowi td .ndrysho a{
+    font-family: "Poppins",sans-serif;
+    text-decoration: none;
+    font-weight: 500;
+
+}
+.rowi td .ndrysho a:nth-child(1){
+    color: blue;
+    transition: .3s;
+}
+
+.rowi td .ndrysho a:hover:nth-child(1){
+    color: rgb(0, 0, 52);
+    transition: .3s;
+}
+
+.rowi td .ndrysho a:nth-child(2){
+    color: rgb(255, 0, 0);
+    transition: .3s;
+}
+
+.rowi td .ndrysho a:hover:nth-child(2){
+    color: rgb(52, 0, 0);
+    transition: .3s;
+}
+
+@media screen and (max-width: 815px){
+    .main{
+        width: 100%;
+    }
+    .tabela{
+        overflow-x: scroll !important;
+    }
+}
+
+
+@media screen and (max-width: 677px){
+    .rowi td .info h3{
+        font-size: 15px;
+
+    }
+    
+    .rowi td .info h4{
+        font-size: 12px;
+    }
+    .rowi td .username h3{
+        font-size: 15px;
+    }
+    
+    
+    
+    .rowi td .ndrysho a{
+        font-size: 14px;
+    
+    }
+    
+    
+}
+@media screen and (max-width:603px){
+    
+    .tabela{
+        width: 40rem;
+    }
+    .main{
+        margin-bottom: 5rem;
+    }
+}
+
+
+
+/* ============================== */
+
+
+
+.shtoMain{
+    width: 70%;
+    margin: 0 auto !important;
+    background-color: aqua;
+}
